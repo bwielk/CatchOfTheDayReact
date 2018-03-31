@@ -10,11 +10,11 @@ import NotFound from './components/NotFound';
 const Root = () => {
 	return(
 		<Router>
-		<Switch>
-			<Route path="/" exact component={StorePicker} />
-			<Route path ="/store/:storeId" exact component={App} />
-			<Route component={NotFound} />
-		</Switch>
+			<Switch>
+				<Route path="/" exact component={StorePicker} />
+				<Route path ="/store/:storeId" exact component={App} />
+				<Route component={NotFound} />
+			</Switch>
 		</Router>
 	)
 }
