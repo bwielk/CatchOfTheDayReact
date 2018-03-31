@@ -14,7 +14,7 @@ const Root = () => {
 				<Route path="/" exact component={StorePicker} />
 				<Route path ="/store/:storeId" exact component={App} />
 				<Route component={NotFound} />
-			</Switch>
+			  </Switch>
 		</Router>
 	)
 }
