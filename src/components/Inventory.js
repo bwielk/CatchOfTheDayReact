@@ -13,9 +13,7 @@ class Inventory extends React.Component {
 		const fish = this.props.fishes[key];
 		const updatedFish = {...fish,
 			[e.target.name]: e.target.value
-			//[e.target.price]: parseInt(`${e.target.value}`)
 		}
-		//event.preventDefault();
 		this.props.updateFish(key, updatedFish);
 	}
 

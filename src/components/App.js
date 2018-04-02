@@ -17,6 +17,7 @@ class App extends React.Component{
 		this.loadSampleFishes = this.loadSampleFishes.bind(this);
 		this.addToOrder = this.addToOrder.bind(this);
 		this.updateFish = this.updateFish.bind(this);
+		this.removeFish = this.removeFish.bind(this);
 	}
 
 	componentWillMount(){
@@ -50,6 +51,12 @@ class App extends React.Component{
 		const timestamp = Date.now();
 		fishes[`fish=${timestamp}`] = fish;
 		this.setState({fishes: fishes});
+	}
+
+	removeFish(key){
+		const fishes = {...this.state.fishes};
+		fishes[key] = null;
+		this.setState({fishes});
 	}
 
 	updateFish(key, updatedFish) {
@@ -92,6 +99,7 @@ class App extends React.Component{
 				fishes = {this.state.fishes} 
 				addFish = {this.addFish} 
 				loadSampleFishes = {this.loadSampleFishes}
+				removeFish = {this.removeFish}
 			/>
  		</div>
 		)
