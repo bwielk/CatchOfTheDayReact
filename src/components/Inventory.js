@@ -25,12 +25,12 @@ class Inventory extends React.Component {
 			<div className = "fish-edit" key={key}>
 				<input type = "text" name = "name" value = {fish.name} placeholder = "Fish Name" onChange = {(e) => this.handleChange(e, key)}/>
 				<input type = "text" name = "price" value = {fish.price}  placeholder = "Fish Price" onChange = {(e) => this.handleChange(e, key)}/>
-				<select name = "status" value = {fish.status} placeholder = "Fish Status">
+				<select name = "status" value = {fish.status} placeholder = "Fish Status" onChange = {(e) => this.handleChange(e, key)}> 
 					<option value="available">Fresh!</option>
 					<option value="unavailable">Sold Out!</option>
 				</select>
-				<textarea type = "text" value = {fish.description} name = "description" placeholder = "Fish Description"></	textarea>
-				<input type = "text" value = {fish.image} placeholder = "Fish Image" />
+				<textarea type = "text" value = {fish.description} name = "description" placeholder = "Fish Description" onChange = {(e) => this.handleChange(e, key)}></textarea>
+				<input type = "text" value = {fish.image} placeholder = "Fish Image" onChange = {(e) => this.handleChange(e, key)} />
 			</div>
 		)
 	}
