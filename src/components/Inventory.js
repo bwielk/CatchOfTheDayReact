@@ -6,19 +6,19 @@ class Inventory extends React.Component {
 
 	constructor(){
 		super();
-		this.renderInventory = this.renderInventory.bind(this);
-		this.handleChange = this.handleChange.bind(this);
+		//this.renderInventory = this.renderInventory.bind(this);
+		//this.handleChange = this.handleChange.bind(this);
 	}
 
-	handleChange(e, key){
+	handleChange =(e, key)=> {
 		const fish = this.props.fishes[key];
 		const updatedFish = {...fish,
 			[e.target.name]: e.target.value
 		}
 		this.props.updateFish(key, updatedFish);
-	}
+	};
 
-	renderInventory(key){
+	renderInventory =(key)=> {
 		const fish = this.props.fishes[key];
 		return (
 			<div className = "fish-edit" key={key}>
@@ -33,7 +33,7 @@ class Inventory extends React.Component {
 				<button onClick = {(e) => this.props.removeFish(key)}>Remove Fish</button>
 			</div>
 		)
-	}
+	};
 
 	render(){
 		return (

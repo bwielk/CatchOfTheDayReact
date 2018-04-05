@@ -6,7 +6,7 @@ class Order extends React.Component {
 
 	constructor(){
 		super();
-		this.renderOrder = this.renderOrder.bind(this);
+		//this.renderOrder = this.renderOrder.bind(this);
 	}
 
 	static propTypes = {
@@ -14,7 +14,7 @@ class Order extends React.Component {
 		orders: PropTypes.object
 	}
 
-	renderOrder(key){
+	renderOrder =(key)=> {
 		const fish = this.props.fishes[key];
 		const count = this.props.orders[key];
 		const removeButton = <button onClick = {() => this.props.removeOrder(key)}>&times;</button>
@@ -33,7 +33,7 @@ class Order extends React.Component {
 				{removeButton}
 			</li>
 		)
-	}
+	};
 
 	render(){
 		const orderIds = Object.keys(this.props.orders);

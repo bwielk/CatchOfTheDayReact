@@ -14,12 +14,12 @@ class App extends React.Component{
 			fishes: {},
 			order: {}
 		}
-		this.addFish = this.addFish.bind(this);
-		this.loadSampleFishes = this.loadSampleFishes.bind(this);
-		this.addToOrder = this.addToOrder.bind(this);
-		this.updateFish = this.updateFish.bind(this);
-		this.removeFish = this.removeFish.bind(this);
-		this.removeOrder = this.removeOrder.bind(this);
+		//this.addFish = this.addFish.bind(this);
+		//this.loadSampleFishes = this.loadSampleFishes.bind(this);
+		//this.addToOrder = this.addToOrder.bind(this);
+		//this.updateFish = this.updateFish.bind(this);
+		//this.removeFish = this.removeFish.bind(this);
+		//this.removeOrder = this.removeOrder.bind(this);
 	}
 
 	componentWillMount(){
@@ -48,42 +48,42 @@ class App extends React.Component{
 		localStorage.setItem(`order-${params.storeId}`, JSON.stringify(nextState.order));
 	}
 
-	addFish(fish){
+	addFish =(fish)=> {
 		const fishes = {...this.state.fishes};
 		const timestamp = Date.now();
 		fishes[`fish=${timestamp}`] = fish;
 		this.setState({fishes: fishes});
-	}
+	};
 
-	removeFish(key){
+	removeFish =(key)=> {
 		const fishes = {...this.state.fishes};
 		fishes[key] = null;
 		this.setState({fishes});
-	}
+	};
 
-	updateFish(key, updatedFish) {
+	updateFish =(key, updatedFish)=> {
 		const fishes = {...this.state.fishes};
 		fishes[key] = updatedFish;
 		this.setState({fishes});
-	}
+	};
 
-	loadSampleFishes(){
+	loadSampleFishes =()=> {
 		this.setState({
 			fishes: sampleFishes
 		});
 	}
 
-	addToOrder(key){
+	addToOrder =(key)=> {
 		const order = {...this.state.order};
 		order[key] = order[key] + 1 || 1;
 		this.setState({order : order});
-	}
+	};
 
-	removeOrder(key){
+	removeOrder =(key)=> {
 		const order = {...this.state.order};
 		delete order[key];
 		this.setState({order});
-	}
+	};
 
 	render(){
 		return(
