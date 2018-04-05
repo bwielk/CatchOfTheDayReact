@@ -5,6 +5,7 @@ import Inventory from './Inventory';
 import sampleFishes from '../sample-fishes';
 import Fish from './Fish';
 import base from '../Rebase';
+import PropTypes from 'prop-types';
 
 class App extends React.Component{
 	constructor(){
